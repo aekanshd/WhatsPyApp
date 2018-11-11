@@ -36,10 +36,9 @@ except NoSuchElementException:
 n = 0
 multiline_msg = ''' '''
 lines = multiline_msg.split("\n")
-for i in range(len(lines)):
-    string = lines[n]
+for line in lines:
     input_box = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div/div[2]')
-    for letter in string:
+    for letter in line:
         time.sleep(random.uniform(0, 2))
         input_box.send_keys(letter)
     input_box.send_keys(Keys.RETURN)
